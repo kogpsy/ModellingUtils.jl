@@ -11,7 +11,8 @@ using TypedTables
 
 # export Types
 abstract type ModelParams end
-export ModelParams, PriorPsychophysicsModel
+abstract type ModelPrior end
+export ModelParams, ModelPrior
 
 include("turing-utils.jl")
 export FittedModel, fit_model, Prior
