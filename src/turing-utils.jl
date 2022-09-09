@@ -8,8 +8,8 @@ end
   model::DynamicPPL.Model
 end
 
-function fit_model(; model::Function, d::DataFrame, alg=NUTS())
-  m = model(d.x, d.y)
+function fit_model(; model::Function, link_f::Function, prior::ModelPrior, d::DataFrame, alg=NUTS())
+  m = model(d.x, d.y, prior = prior, f = link_f)
   fit = Turing.sample(m, alg, MCMCThreads(), 1000, 4)
   FittedModel(fit, m)
 end
