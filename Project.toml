@@ -4,11 +4,16 @@ authors = ["Daniel Fitze <daniel.fitze@psy.unibe.ch>"]
 version = "0.1.0"
 
 [deps]
+AlgebraOfGraphics = "cbdf2221-f076-402e-a563-3d30da359d67"
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+DataUtils = "d2f83e56-b19b-43fe-8ada-5b68c2be2945"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 Gadfly = "c91e804a-d5a3-530f-b6f0-dfbca275c004"
 Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 StatsFuns = "4c63d2b9-4356-54db-8cca-17b64c39e42c"
+TimeSeries = "9e3dc215-6440-5c97-bce1-76c03772f85e"
 Turing = "fce5fe82-541a-59a6-adf8-730c64b5f9a0"
+TuringModels = "ead7e11d-4ba5-55c3-9d74-177ea73ef1fd"
 TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"

@@ -1,24 +1,29 @@
 module ModellingUtils
 
 using Base: @kwdef
-using Parameters
+#using Parameters
 #using Random, Distributions
 #using StatsFuns
-using DataFrames
-using Turing
-using Gadfly
-using TypedTables
+#using DataFrames
+#using Turing
+#using CairoMakie, AlgebraOfGraphics
+#using TypedTables
+#using TuringModels
+using DataUtils
+#export ModelParams
 
-# export Types
-abstract type ModelParams end
-abstract type ModelPrior end
-export ModelParams, ModelPrior
+#abstract type ModelParams end
 
-include("turing-utils.jl")
-export FittedModel, fit_model, Prior
+export Simulation 
+@kwdef mutable struct Simulation
+  model::Float64 = 5.0
+  #param::ModelParams
+end
 
-include("simulation-utils.jl")
-export plot_fit, param_recov_table
+#include("turing-utils.jl")
+#export FittedModel, fit_model, Prior
 
-
+#include("simulation-utils.jl")
+#export plot_fit, param_recov_table
+#
 end # module
