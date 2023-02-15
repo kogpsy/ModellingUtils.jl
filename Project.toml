@@ -6,6 +6,7 @@ version = "0.1.0"
 [deps]
 AlgebraOfGraphics = "cbdf2221-f076-402e-a563-3d30da359d67"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+Chain = "8be319e6-bccf-4806-a6f7-6fae938471bc"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 DataUtils = "d2f83e56-b19b-43fe-8ada-5b68c2be2945"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"

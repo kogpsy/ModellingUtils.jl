@@ -1,9 +1,33 @@
-@kwdef mutable struct Simulation
-  model::DynamicPPL.Model
-  param::ModelParams
-  data::DataFrame
-  fit::Chains
+abstract type ModelParam end
+
+@kwdef mutable struct linreg_param <: ModelParam
+  α::Float64
+  β_1::Float64
+  β_2::Float64
+  β_3::Float64
+  σ::Float64  
 end
+
+@kwdef mutable struct logreg_param <: ModelParam
+  α::Float64
+  β_1::Float64
+  β_2::Float64
+end
+
+
+@kwdef mutable struct simulation
+  #nb_vpn::Union{Int, Nothing} = nothing
+  #nb_trials::Union{Int, Nothing} = nothing
+  sim_param::Union{ModelParam, Nothing} = nothing
+  predictors::Union{DataFrame, Nothing} = nothing 
+  y_sim::Union{DataFrame, Nothing} = nothing
+end
+
+#  model::DynamicPPL.Model
+#  param::ModelParams
+#  data::DataFrame
+#  fit::Chains
+#end
 
 #function plot_fit(fit::FittedModel, data)
 #  # model parameters
@@ -39,11 +63,11 @@ end
 #             )
 #end
 
-function param_recov_table(fit::FittedModel, params::ModelParams)
-  @unpack b₀, bₓ, λ, γ, f = params
-
-  Table(param = ["b₀", "bₓ", "λ", "γ"],
-        sim = [b₀, bₓ, λ, γ],
-        fit = [mean(fit.fit[:α]), mean(fit.fit[:β]), mean(fit.fit[:λ]), mean(fit.fit[:γ])])
-end
+#function param_recov_table(fit::FittedModel, params::ModelParams)
+#  @unpack b₀, bₓ, λ, γ, f = params
+#
+#  Table(param = ["b₀", "bₓ", "λ", "γ"],
+#        sim = [b₀, bₓ, λ, γ],
+#        fit = [mean(fit.fit[:α]), mean(fit.fit[:β]), mean(fit.fit[:λ]), mean(fit.fit[:γ])])
+#end
 
